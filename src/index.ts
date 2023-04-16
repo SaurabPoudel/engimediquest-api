@@ -27,7 +27,7 @@ const MONGO_URL =
   "mongodb+srv://poudelsaurab20:nYbmNAnSG889RFsb@cluster0.22pmr2x.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL);
+mongoose.connect(MONGO_URL).then(() => console.log("Connected to MongoDB"));
 mongoose.connection.on("error", (error: Error) => console.log(error));
 
 app.use("/", router());
